@@ -25,6 +25,7 @@ public int getCustId()
   public void showCustomer()
   {
   }
-sysout
+system.out.println("Hello Customer");
+system.out.println("Hello Customer");
 
 }

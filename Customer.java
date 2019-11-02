@@ -16,8 +16,14 @@ public int getCustId()
     return this.custName;
 
   }
+
     public void getCustomer()
     {
     }
     
+
+  public void showCustomer()
+  {
+  }
+
 }

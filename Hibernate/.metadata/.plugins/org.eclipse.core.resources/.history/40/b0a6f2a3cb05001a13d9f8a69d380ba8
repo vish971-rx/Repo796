@@ -1,0 +1,9 @@
+package com.lti.component;
+
+public class SpellCheck {
+
+	public void checkSpellingMistakes(String document)
+	{
+		System.out.println("spellchecker executed for "+ document);
+}
+}

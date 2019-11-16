@@ -1,0 +1,55 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.lti.dao.CustomerDao;
+import com.lti.model.Customer;
+
+public class CustomerTest {
+
+	@Test
+	
+		public void testCustomerSaveOrNot()
+		{
+			Customer cust=new Customer();
+			cust.setCustName("varsha");
+			cust.setCustCity("kolkata");
+			
+			
+			CustomerDao dao= new CustomerDao();
+			dao.save(cust);
+		}
+	@Test
+	
+	public void testCustomerfetchByIdOrNot()
+	
+	{
+		CustomerDao dao= new CustomerDao();
+		Customer cust=dao.retrieve(1); //check in db
+		assertNotNull(cust);
+		//no println
+		//use assert
+		System.out.println(cust.getCustName());
+		System.out.println(cust.getCustCity());
+	}
+	
+
+	@Test(expected=NullPointerException.class)
+	
+	public void testCustomerNotfetchById()
+	
+	{
+		CustomerDao dao= new CustomerDao();
+		Customer cust=dao.retrieve(123); //check in db
+		//assertNotNull(cust);
+		//no println
+		//use assert
+		System.out.println("Error no entry found");
+
+	}
+	
+	}
+
+

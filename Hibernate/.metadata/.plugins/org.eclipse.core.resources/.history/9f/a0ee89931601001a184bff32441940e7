@@ -1,0 +1,32 @@
+package com.lti.app;
+
+import com.lti.dao.CustomerDao;
+import com.lti.model.Customer;
+
+public class App {
+
+//	public App(String custName,String custCity)
+//		
+//	{// TODO Auto-generated method stub
+//		
+//		Customer cust=new Customer();
+//		cust.setCustName(custName);
+//		cust.setCustCity(custCity);
+//		
+//		
+//		CustomerDao dao= new CustomerDao();
+//		dao.save(cust);
+//
+//	}
+
+	
+	public static void main(String[] args)
+	{
+		CustomerDao dao=new CustomerDao();
+		Customer cus=dao.retrieve(1);
+		System.out.println(cus.getCustName());
+		System.out.println(cus.getCustCity());
+		dao.fetchByCity("pune");
+	}
+}
+

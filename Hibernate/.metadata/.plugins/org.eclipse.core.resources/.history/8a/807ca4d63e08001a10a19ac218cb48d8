@@ -1,0 +1,9 @@
+package com.lti.service;
+
+import org.springframework.stereotype.Service;
+
+//instead of @Component,use @Service
+@Service
+public class CustomerService {
+
+}

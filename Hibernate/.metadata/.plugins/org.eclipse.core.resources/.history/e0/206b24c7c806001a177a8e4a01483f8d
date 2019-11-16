@@ -1,0 +1,27 @@
+package com.lti.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.dao.IncomeupdateDao;
+import com.lti.model.IncomeDetails;
+
+
+
+public class TestIncomeDetails {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext ctx=
+				new ClassPathXmlApplicationContext("spring-db-config.xml");
+IncomeupdateDao ob=(IncomeupdateDao)ctx.getBean("income");
+IncomeDetails id=new IncomeDetails();
+id.setEmployeeName("Varsha");
+id.setOrganizationType("IT");
+id.setRetirementAge(60);
+id.setTypeOfEmployment("Service");
+ob.addNewRecord(id);
+	}
+
+}

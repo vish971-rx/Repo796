@@ -1,0 +1,20 @@
+package com.lti.test;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Bus;
+
+public class BusStopTest {
+	@Test
+	public void addBus()
+	{
+		GenericDao dao=new GenericDao();
+		Bus bus=new Bus();
+		bus.setDepartureTime(departureTime);
+		bus.setDestination(destination);
+		bus.setOperator(operator);
+		bus.setSource(source);
+	}
+
+}

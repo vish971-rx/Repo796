@@ -1,0 +1,32 @@
+package com.lti.model;
+
+public class Customer
+{
+	int CustId;
+	String CustName;
+	String CustCity;
+	public int getCustId() {
+		return CustId;
+	}
+	public void setCustId(int custId) {
+		CustId = custId;
+	}
+	public String getCustName() {
+		return CustName;
+	}
+	public void setCustName(String custName) {
+		CustName = custName;
+	}
+	public String getCustCity() {
+		return CustCity;
+	}
+	public void setCustCity(String custCity) {
+		CustCity = custCity;
+	}
+	
+	
+	
+
+	}
+
+

@@ -1,0 +1,28 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.lti.dao.CustomerDao;
+import com.lti.model.Customer;
+
+public class CustomerTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+		public void testCustomerSaveOrNot()
+		{
+			Customer cust=new Customer();
+			cust.setCustName("varsha");
+			cust.setCustCity("kolkata");
+			
+			
+			CustomerDao dao= new CustomerDao();
+			dao.save(cust);
+		}
+		
+	}
+
+}

@@ -1,0 +1,97 @@
+package com.lti.test;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+
+import com.lti.model.Account;
+import com.lti.model.Transaction;
+import com.lti.service.*;
+
+public class AccountTransactionTest {
+
+	@Test
+	public void addAccount()
+	{
+		Account account=new Account();
+		account.setAccno(66787);
+		account.setBalance(1000.00);
+		account.setName("Vishaka");
+		account.setType("Savings");
+		AccountTransactionService ats=new AccountTransactionService();
+		ats.openAccount(account);
+	}
+	 @Test
+	 public void withdraw()
+	 {
+		// Account account=new Account();
+			//account.setAccno(66666);
+			//account.setBalance(500000.00);
+			AccountTransactionService ats=new AccountTransactionService();
+			ats.withdraw(66666,5000.00);
+	 }
+	 @Test
+	 public void deposit()
+	 {
+		// Account account=new Account();
+			//account.setAccno(66666);
+			//account.setBalance(500000.00);
+			AccountTransactionService ats=new AccountTransactionService();
+			ats.deposit(66666, 400001168, 5000.0);
+	 }
+	 @Test
+	 public void viewbalance()
+	 {
+		 AccountTransactionService ats=new AccountTransactionService();
+		 ats.checkBalance(66666);
+	 }
+	 @Test
+	 public void view()
+	 {
+		 AccountTransactionService ats=new AccountTransactionService();
+		 List<Account> as = ats.getAccountsByType("Savings");
+		 for(Account a2:as){
+			 System.out.println(a2.getName());
+		 }
+	 }
+	 @Test
+	 public void viewTrs()
+	 {
+		 AccountTransactionService ats=new AccountTransactionService();
+		 List<Transaction> as = ats.getMiniStatement(66666);
+		 for(Transaction a2:as){
+			 System.out.println(a2);
+		 }
+	 }
+	 @Test
+	 public void viewTrsLastDate()
+	 {
+		 AccountTransactionService ats=new AccountTransactionService();
+		 
+		 List<Transaction> as = ats.getTransactionsByDate(66666,LocalDate.of(2019, 11, 9));
+		 for(Transaction a2:as){
+			 System.out.println(a2);
+		 }
+	 }
+		@Test
+		public void viewDetailsForSuspicion()
+		 {
+			 AccountTransactionService ats=new AccountTransactionService();
+			 
+			 List<Account> as = ats.getAccountsBySuspicion(5000);
+			 //List<Transaction> tx=new ArrayList<Transaction>();
+			 for(Account a2:as){
+				 System.out.println(a2);
+				 for(Transaction tx1:((Account) as).getTransactions())
+				 {
+					 System.out.println(a2);
+				 }
+	 }
+	 
+		 }
+		
+}
+

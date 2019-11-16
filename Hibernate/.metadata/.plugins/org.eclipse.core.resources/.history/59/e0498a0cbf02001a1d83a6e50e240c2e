@@ -1,0 +1,27 @@
+package com.lti.service;
+
+import com.lti.model.Account;
+
+public class AccountTransactionService {
+
+	
+	
+	public void openAccount(Account acc)
+	{
+		
+	}
+	public void withdraw(int acno,double amount)
+	{
+		
+	}
+	public void deposit (int fromAcn,int toAcno,double amount)
+	{
+		
+	}
+	
+	public double checkBalance(int acno)
+	{
+		int remainingBalance=0;
+		return remainingBalance;
+	}
+}

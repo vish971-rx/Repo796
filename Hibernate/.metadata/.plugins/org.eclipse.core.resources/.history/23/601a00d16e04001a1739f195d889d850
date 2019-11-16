@@ -1,0 +1,23 @@
+package com.lti.test;
+
+import java.time.LocalTime;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Bus;
+
+public class BusStopTest {
+	@Test
+	public void addBus()
+	{
+		GenericDao dao=new GenericDao();
+		Bus bus=new Bus();
+		bus.setDepartureTime(LocalTime.of(8, 30));
+		bus.setDestination("Pune");
+		bus.setOperator("Orange travels");
+		bus.setSource("Vash");
+		dao.save(bus);
+	}
+
+}

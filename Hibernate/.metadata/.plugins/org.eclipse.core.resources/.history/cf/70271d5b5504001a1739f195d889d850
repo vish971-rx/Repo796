@@ -1,0 +1,23 @@
+package com.lti.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_Item")
+public class Item {
+
+	
+	
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	private int quantity;
+	
+	//private Product product
+
+	private Cart cart;
+}

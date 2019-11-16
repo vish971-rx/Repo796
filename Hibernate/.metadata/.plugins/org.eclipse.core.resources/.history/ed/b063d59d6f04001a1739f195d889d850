@@ -1,0 +1,64 @@
+package com.lti.model;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_bus")
+public class Bus {
+	@Id
+	@GeneratedValue
+ private int busno;
+ private String operator;
+ 
+ @Column(columnDefinition="timestamp")
+ private LocalDateTime departureTime;
+ private String source;
+ private String destination;
+ @OneToMany(mappedBy="bus")
+ private List<Stop> stops;
+public int getBusno() {
+	return busno;
+}
+public void setBusno(int busno) {
+	this.busno = busno;
+}
+public String getOperator() {
+	return operator;
+}
+public void setOperator(String operator) {
+	this.operator = operator;
+}
+public LocalDateTime getDepartureTime() {
+	return departureTime;
+}
+public void setDepartureTime(LocalDateTime localDateTime) {
+	this.departureTime = localDateTime;
+}
+public String getSource() {
+	return source;
+}
+public void setSource(String source) {
+	this.source = source;
+}
+public String getDestination() {
+	return destination;
+}
+public void setDestination(String destination) {
+	this.destination = destination;
+}
+public List<Stop> getStops() {
+	return stops;
+}
+public void setStops(List<Stop> stops) {
+	this.stops = stops;
+}
+}

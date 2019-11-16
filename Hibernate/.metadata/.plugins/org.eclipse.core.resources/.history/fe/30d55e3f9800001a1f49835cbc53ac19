@@ -1,0 +1,68 @@
+package com.lti.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.lti.dao.CustomerDao;
+import com.lti.model.Customer;
+
+/**
+ * Servlet implementation class CustomerServlet
+ */
+
+@WebServlet("/CustomerServlet")
+public class CustomerServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CustomerServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//doGet(request, response);
+		int id=Integer.parseInt(request.getParameter("uid"));
+		String name=request.getParameter("name");
+		String city=request.getParameter("cname");
+		
+		String a=request.getParameter("c1");
+		if(a.equals("insert"))
+		{
+			CustomerDao dao=new CustomerDao();
+			Customer c=new Customer();
+			c.setCustName(name);
+			c.setCustCity(city);
+			dao.save(c);
+		}
+		
+		else
+		{
+			
+		}
+		//App a1= new App(request.getParameter("name"),request.getParameter("cname"));
+		
+		CustomerDao dao=new CustomerDao();
+		Customer c=new Customer();
+		c.setCustName(name);
+		c.setCustCity(city);
+		//dao.save(c);
+		
+		PrintWriter out=response.getWriter();
+		Customer cus=dao.retrieve(id);
+		//out.println(cus.getCustCity()+"\t"+cus.getCustName());
+		//System.out.println(id1);
+
+	}
+
+}

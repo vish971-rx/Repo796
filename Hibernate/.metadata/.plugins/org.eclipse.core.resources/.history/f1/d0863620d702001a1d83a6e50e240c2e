@@ -1,0 +1,38 @@
+package com.lti.test;
+
+import org.junit.Test;
+
+
+import com.lti.model.Account;
+import com.lti.service.*;
+
+public class AccountTransactionTest {
+
+	@Test
+	public void addAccount()
+	{
+		Account account=new Account();
+		account.setAccno(66446);
+		account.setBalance(500000.00);
+		account.setName("Vishwendra");
+		account.setType("Savings");
+		AccountTransactionService ats=new AccountTransactionService();
+		ats.openAccount(account);
+	}
+	 @Test
+	 public void withdraw()
+	 {
+		// Account account=new Account();
+			//account.setAccno(66666);
+			//account.setBalance(500000.00);
+			AccountTransactionService ats=new AccountTransactionService();
+			ats.withdraw(66666,5000.00);
+	 }
+	 @Test
+	 public void viewbalance()
+	 {
+		 AccountTransactionService ats=new AccountTransactionService();
+		 ats.checkBalance(66666);
+	 }
+}
+

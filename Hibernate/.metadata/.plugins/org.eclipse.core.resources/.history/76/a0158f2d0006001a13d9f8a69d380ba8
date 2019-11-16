@@ -1,0 +1,88 @@
+package com.lti.component;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+
+@Component("carparts1")
+public class CarPartsInventoryImpl1 implements CarPartsInventory{
+
+	public void addNewPart(CarPart carpart) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+			System.out.println("connection established..");
+			PreparedStatement smt=con.prepareStatement("insert into carpart(partno,partname,carmodel,quantity,price) values(?,?,?,?,?)");
+			
+			smt.setInt(1,carpart.getPartNo());
+			smt.setString(2,carpart.getPartName());
+			smt.setString(3,carpart.getCarModel());
+			smt.setInt(4,carpart.getQuantity());
+			smt.setDouble(5,carpart.getPrice());
+			smt.executeUpdate();
+			
+			con.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		finally
+		{
+			//try{smt.close();} catch(Exception e){}
+			//try{con.close();} catch(Exception e){}
+		}
+	}
+
+	public List<CarPart> getAvailableParts() {
+		// TODO Auto-generated method stub
+		List<CarPart> carparts=new ArrayList<CarPart>();
+		CarPart carpart=new CarPart();
+		try 
+        {  
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+			System.out.println("connection established..");
+            Statement stmt = con.createStatement();  
+            ResultSet rs = stmt.executeQuery("select * from carpart");  
+            
+            
+            //System.out.println("<table border=1 width=50% height=50%>");  
+            //System.out.println("<tr><th>ID</th><th>FirstName</th><th>LastName</th><th>DOB</th><th>City</th><tr>");  
+            while (rs.next()) 
+            {  
+            	System.out.println("fdjfd");
+            	//rs.carpart.getPartNo();
+            rs.getInt( carpart.getPartNo()); 
+            rs.getString(((CarPart) carpart).getPartName());
+            rs.getString(((CarPart) carpart).getCarModel());
+            rs.getInt(((CarPart) carpart).getQuantity());
+            rs.getDouble((int) ((CarPart) carpart).getPrice());
+                
+                
+               // out.println("<tr><td>" + id + "</td><td>" + fnm + "</td><td>" + lnm + "</td><td>" + dob + "</td><td>" + city + "</td></tr>");   
+            }  
+             
+            con.close();  
+           }  
+            catch (Exception e) 
+           {  
+            	e.printStackTrace();
+            System.out.println("error");  
+        }  
+
+		
+		
+	return carparts;
+	}
+
+}

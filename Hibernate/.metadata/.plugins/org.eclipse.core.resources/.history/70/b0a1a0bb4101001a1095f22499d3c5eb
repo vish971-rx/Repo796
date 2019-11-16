@@ -1,0 +1,12 @@
+package com.lti.model;
+
+public class Address {
+
+	private int id;
+	private int pincode;
+	private String city;
+	private String landmark;
+
+ User user=new User();
+ 
+}

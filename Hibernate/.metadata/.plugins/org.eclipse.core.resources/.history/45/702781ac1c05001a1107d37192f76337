@@ -1,0 +1,16 @@
+package com.lti.component;
+
+public class CurrencyConverter implements CurrencyConverterInterface {
+	
+	
+	
+	/* (non-Javadoc)
+	 * @see com.lti.component.CurrencyConverterInterface#dollarsToRupee(double)
+	 */
+	public double dollarsToRupee(double dollars)
+	{
+		return dollars*71.56;
+		
+	}
+
+}

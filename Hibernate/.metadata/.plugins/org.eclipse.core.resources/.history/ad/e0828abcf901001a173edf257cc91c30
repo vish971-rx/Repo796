@@ -1,0 +1,66 @@
+package com.lti.test;
+
+import java.time.LocalDate;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.PassportBi;
+import com.lti.model.PersonBi;
+
+public class PersonPassportTest {
+	@Test
+	public void addPerson()
+	{
+			PersonBi person=new PersonBi();
+		person.setAge(25);
+		person.setName("Jon");
+		
+			GenericDao dao= new GenericDao();
+		dao.save(person);
+		
+	}
+
+	
+	@Test
+	public void assignPassport()
+	{
+		GenericDao dao=new GenericDao();
+
+		PersonBi person=(PersonBi)dao.fetchUser(PersonBi.class,202);
+		PassportBi passport=new PassportBi();
+	
+		passport.setCountry("India");
+		passport.setExpiryDate(LocalDate.of(2012, 10, 30));
+		passport.setIssueDate(LocalDate.of(1999, 10, 29));
+		passport.setPassportNo("M237777");
+		passport.setPerson(person);
+		dao.save(passport);
+	}
+	
+	
+	
+	@Test
+	public void addPersonAlongWithPassport()
+	{
+		PersonBi person=new PersonBi();
+		person.setAge(25);
+		person.setName("lannister");
+		
+			GenericDao dao= new GenericDao();
+		dao.save(person);
+		dao.fetchUser(PersonBi.class,person.getId());
+		System.out.println(dao.fetchUser(PersonBi.class,person.getId()));
+
+		PassportBi passport=new PassportBi();
+	
+		passport.setCountry("India");
+		passport.setExpiryDate(LocalDate.of(2012, 10, 30));
+		passport.setIssueDate(LocalDate.of(1999, 10, 29));
+		passport.setPassportNo("M234588");
+		passport.setPerson(person);
+		dao.save(passport);
+		
+	}
+	
+}

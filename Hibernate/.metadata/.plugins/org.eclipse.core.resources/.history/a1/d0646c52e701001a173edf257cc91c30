@@ -1,0 +1,13 @@
+package com.lti.model;
+
+import java.time.LocalDate;
+
+public class PassportBi {
+	
+	private String passportNo;
+	private String country;
+	private LocalDate issueDate;
+	private LocalDate expiryDate;
+	
+PersonBi person;
+}

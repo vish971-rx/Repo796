@@ -1,0 +1,59 @@
+package com.lti.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Cart;
+import com.lti.model.Item;
+
+public class ItemCartTest {
+
+	@Test
+	public void addcart()
+	{
+		GenericDao dao=new GenericDao();
+		Cart cart=new Cart();
+		cart.setTotal(124567.00);
+		dao.save(cart);
+	}
+	@Test
+	public void addItems()
+	{
+		GenericDao dao=new GenericDao();
+		Cart cart=(Cart) dao.fetchUser(Cart.class, 10020);
+		List<Item> items=new ArrayList<Item>();
+		Item item=new Item();
+		item.setQuantity(56);
+		item.setCart(cart);
+		dao.save(item);
+		items.add(item);
+	}
+	@Test
+	public void updateItemsToCart()
+	{
+		GenericDao dao=new GenericDao();
+		Cart cart=(Cart) dao.fetchUser(Cart.class, 10020);
+		List<Item> items=new ArrayList<Item>();
+		Item item=new Item();
+		item.setQuantity(56);
+		item.setCart(cart);
+		dao.save(item);
+		
+		Item item1=new Item();
+		item.setQuantity(53);
+		item.setCart(cart);
+		dao.save(item1);
+		
+		Item item2=new Item();
+		item.setQuantity(58);
+		item.setCart(cart);
+		dao.save(item2);
+		
+		items.add(item);
+		items.add(item1);
+		items.add(item2);
+	}
+}

@@ -1,0 +1,17 @@
+package com.lti.component;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("atm")
+public class Atm implements AtmInterface {
+@Autowired
+private SbiBank sbibank;
+/* (non-Javadoc)
+ * @see com.lti.component.AtmInterface#requestWithdraw(double)
+ */
+public void requestWithdraw(double amount)
+{
+	sbibank.grantRequest(amount);
+}
+}

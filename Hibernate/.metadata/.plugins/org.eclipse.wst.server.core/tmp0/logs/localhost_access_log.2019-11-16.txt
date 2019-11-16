@@ -1,0 +1,11 @@
+127.0.0.1 - - [16/Nov/2019:13:27:12 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:27:14 +0530] "GET /spring-mvc/register.jsp HTTP/1.1" 200 462
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:27:14 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:27:54 +0530] "POST /spring-mvc/register.lti HTTP/1.1" 500 23428
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:31:35 +0530] "GET /spring-mvc/WEB-INF/classes/com/lti/service/CustomerService.java HTTP/1.1" 404 1047
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:31:50 +0530] "GET /spring-mvc/register.jsp HTTP/1.1" 200 462
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:32:03 +0530] "POST /spring-mvc/register.lti HTTP/1.1" 404 1105
+127.0.0.1 - - [16/Nov/2019:13:34:53 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:34:54 +0530] "GET /spring-mvc/register.jsp HTTP/1.1" 200 462
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:35:13 +0530] "POST /spring-mvc/register.lti HTTP/1.1" 200 328
+0:0:0:0:0:0:0:1 - - [16/Nov/2019:13:44:04 +0530] "POST /spring-mvc/register.lti HTTP/1.1" 200 328

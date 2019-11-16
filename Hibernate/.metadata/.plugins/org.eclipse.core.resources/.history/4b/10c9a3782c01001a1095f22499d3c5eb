@@ -1,0 +1,43 @@
+package com.lti.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.lti.dao.CustomerDao;
+import com.lti.model.Customer;
+
+public class CustomerTest {
+
+	@Test
+	
+		public void testCustomerSaveOrNot()
+		{
+			Customer cust=new Customer();
+			cust.setCustName("varsha");
+			cust.setCustCity("kolkata");
+			
+			
+			CustomerDao dao= new CustomerDao();
+			dao.save(cust);
+		}
+	@Test
+	
+	public void testCustomerfetchByIdOrNot()
+	{
+		//Customer cust=new Customer();
+		//cust.setCustName("varsha");
+		//cust.setCustCity("kolkata");
+		
+		
+		CustomerDao dao= new CustomerDao();
+		Customer cust=dao.retrieve(1);
+		dao.save(cust);
+		assertNotNull(cust);
+		System.out.println(cust.getCustName());
+		System.out.println(cust.getCustCity());
+	}
+		
+	}
+
+

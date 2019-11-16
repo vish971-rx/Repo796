@@ -1,0 +1,20 @@
+package com.lti.test;
+
+
+import com.lti.dao.DaoForUserAddress;
+
+import com.lti.model.User;
+
+public class UserAddressTest {
+
+	public void testCustomerSaveOrNot()
+	{
+		User user=new User();
+		user.setName("Varsha");
+		user.setEmail("varsha@qwettd.com");
+		user.setPassword("wassup");
+		DaoForUserAddress dao= new DaoForUserAddress();
+		dao.save(user);
+	}
+	
+}

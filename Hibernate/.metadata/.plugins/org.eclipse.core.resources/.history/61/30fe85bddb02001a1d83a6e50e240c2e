@@ -1,0 +1,28 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.lti.model.Account;
+
+public class AccountDao extends GenericDao {
+	
+public List<Account> fetchByType(String type)
+{
+	//SQl-> select * from account where ACC_TYPE='Savings';
+	//JPQL-> select * from Account a where a.type=:tp;
+	EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracleTest");
+	EntityManager em = emf.createEntityManager();
+	Query q=em.createQuery("select * from Account a where a.type=:tp");
+	q.setParameter("tp",type);
+	List<Account> accounts=q.getResultList();
+	em.close();
+	emf.close();
+	return accounts;
+	
+}
+}

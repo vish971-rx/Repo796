@@ -1,0 +1,10 @@
+
+Nov 12, 2019 11:37:36.79 NEW SESSION
+Nov 12, 2019 11:37:36.79 [2964:2620:1112/113729.890:ERROR:gcm_channel_status_request.cc(145)] GCM channel request failed.
+Nov 12, 2019 11:37:57.36 [2964:2620:1112/113757.363:ERROR:gcm_channel_status_request.cc(145)] GCM channel request failed.
+
+Nov 13, 2019 09:28:43.73 NEW SESSION
+Nov 13, 2019 09:28:43.73 [10076:2640:1113/092843.673:ERROR:component_installer.cc(125)] Move failed.: Access is denied. (0x5)
+Nov 13, 2019 09:34:08.28 [10076:11508:1113/093408.281:ERROR:component_installer.cc(125)] Move failed.: Access is denied. (0x5)
+Nov 13, 2019 14:25:25.93 [10076:11440:1113/142525.938:ERROR:component_installer.cc(125)] Move failed.: Access is denied. (0x5)
+Nov 13, 2019 14:26:46.36 [10076:6604:1113/142646.325:ERROR:component_installer.cc(125)] Move failed.: Access is denied. (0x5)

@@ -1,0 +1,66 @@
+package com.lti.model;
+
+import java.time.LocalTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_Stop")
+public class Stop {
+	@Id
+	@GeneratedValue
+	private int stopno;
+	private String name;
+	private LocalTime arrivalTime;
+	private LocalTime departureTime;
+	
+	@JoinColumn(name="bus_id")
+	@ManyToOne
+	private Bus bus;
+
+	public int getStopno() {
+		return stopno;
+	}
+
+	public void setStopno(int stopno) {
+		this.stopno = stopno;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LocalTime getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(LocalTime arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+	public LocalTime getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(LocalTime departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public Bus getBus() {
+		return bus;
+	}
+
+	public void setBus(Bus bus) {
+		this.bus = bus;
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.lti.component;
+
+import java.util.List;
+
+public class CarPartsInventoryImpl1 implements CarPartsInventory{
+
+	public void addNewPart(CarPart carpart) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<CarPart> getAvailableParts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

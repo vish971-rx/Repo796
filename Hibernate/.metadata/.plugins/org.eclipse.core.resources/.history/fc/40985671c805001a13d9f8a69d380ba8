@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<!-- <c:if test="${requestScope.msg!=null}">
+<h3><c:out value="${requestScope.msg }"></c:out></h3>
+</c:if><br><br>
+<c:if test="${sessionScope.filename!=null }">
+<c:set var="file" scope="session" value="${sessionScope.fileName}"/>
+</c:if>-->
+<% String firstname=request.getParameter("firstname");%>
+Firstname=<p> <%=firstname %></p>
+<a href="<c:url value="DownloadServlet?filename=${file }"/>">download</a><br>
+<a href="<c:url value="file-list.jsp"/>">View list</a>
+</center>
+</body>
+</html>

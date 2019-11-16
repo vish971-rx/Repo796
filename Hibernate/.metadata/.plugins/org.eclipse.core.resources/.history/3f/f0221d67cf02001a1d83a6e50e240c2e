@@ -1,0 +1,42 @@
+package com.lti.service;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Account;
+
+public class AccountTransactionService {
+
+	
+	
+	public void openAccount(Account acc)
+	{
+		GenericDao dao=new GenericDao();
+		
+		dao.save(acc);
+	}
+	public void withdraw(int acno,double amount)
+	{
+GenericDao dao=new GenericDao();
+Account account=new Account();
+		double bal=checkBalance(acno);
+		if(bal==0.0||bal<=amount)
+			System.out.println("insufficient balance");
+		else
+			{
+			double amt=bal-amount;
+			System.out.println("The remaining balance:"+amt);
+			}
+		dao.save(account);
+		 
+	}
+	public void deposit (int fromAcn,int toAcno,double amount)
+	{
+		
+	}
+	
+	public double checkBalance(int acno)
+	{
+		Account account=new Account();
+		double remainingBalance=account.getBalance();
+		return remainingBalance;
+	}
+}

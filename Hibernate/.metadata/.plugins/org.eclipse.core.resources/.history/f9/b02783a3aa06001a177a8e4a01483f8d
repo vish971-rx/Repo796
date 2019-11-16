@@ -1,0 +1,68 @@
+package com.lti.component;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+/**
+ 
+hibernate
+ * @author varsha
+ *
+ */
+@Component("carparts4")
+public class CarPartsInventoryImpl4 implements CarPartsInventory{
+@Autowired
+private DataSource datasource;
+	public void addNewPart(CarPart carpart) {
+		// TODO Auto-generated method stub
+			
+		JdbcTemplate jt=new JdbcTemplate(datasource); //JdbcTemplate class to perform jdbc operations
+		jt.update("insert into carpart(partno,partname,carmodel,quantity,price) values(?,?,?,?,?)",
+			
+			carpart.getPartNo(),
+			carpart.getPartName(),
+			carpart.getCarModel(),
+			carpart.getQuantity(),
+			carpart.getPrice());
+		
+			
+		
+			}
+
+	public List<CarPart> getAvailableParts() {
+		// TODO Auto-generated method stub
+		JdbcTemplate jt=new JdbcTemplate(datasource); 
+		class CarPartIn implements RowMapper<CarPart>{
+			public CarPart mapRow(ResultSet rs, int arg) throws SQLException {
+				
+			CarPart carpart=new CarPart();
+			 carpart.setPartNo(rs.getInt(1));
+	           carpart.setPartName(rs.getString(2));
+	           carpart.setCarModel(rs.getString(3));
+	           carpart.setQuantity(rs.getInt(4));
+	           carpart.setPrice(rs.getDouble(5));
+			return carpart;
+			}
+			}
+		 List<CarPart> carparts=jt.query
+				("select * from carpart", new CarPartIn());
+			
+		 return carparts;		
+	
+	}}
+		
+
+

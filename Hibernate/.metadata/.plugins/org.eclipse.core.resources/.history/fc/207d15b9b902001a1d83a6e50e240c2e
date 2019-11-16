@@ -1,0 +1,16 @@
+package com.lti.model;
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Transaction {
+
+	@Id
+	@GeneratedValue
+	private int txno;
+	private String type;
+	private LocalDateTime time;
+}

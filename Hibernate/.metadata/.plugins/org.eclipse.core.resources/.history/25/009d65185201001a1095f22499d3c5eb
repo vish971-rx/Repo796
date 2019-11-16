@@ -1,0 +1,60 @@
+package com.lti.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.lti.model.Address;
+import com.lti.model.User;
+
+public class DaoForUserAddress {
+	public void save(User user)					//add//insert
+	{
+		//Step 1.  Load/create EntityMAnagerFactory object
+		//During this step, Meta-inf/persistence.xml
+		//file will be read automatically
+		
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracleTest");
+		
+	// Step 2: Lo9ad/Create EntityManager Obj
+		EntityManager em = emf.createEntityManager();
+		
+	//Step3:Participate/Start a Transaction
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+	
+		// Now we can insert/update/delete whatever we want 
+		//persist method generates insert query for us 
+		em.persist(user);
+		tx.commit();
+		em.close();
+		emf.close();
+}
+	public void save(Address address)					//add//insert
+	{
+		//Step 1.  Load/create EntityMAnagerFactory object
+		//During this step, Meta-inf/persistence.xml
+		//file will be read automatically
+		
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracleTest");
+		
+	// Step 2: Lo9ad/Create EntityManager Obj
+		EntityManager em = emf.createEntityManager();
+		
+	//Step3:Participate/Start a Transaction
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+	
+		// Now we can insert/update/delete whatever we want 
+		//persist method generates insert query for us 
+		em.persist(address);
+		tx.commit();
+		em.close();
+		emf.close();
+}
+	public User fetchUser(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,23 @@
+package com.lti.model;
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Transaction {
+
+	@Id
+	@GeneratedValue
+	private int txno;
+	private String type;
+	private LocalDateTime time;
+	private double amount;
+	
+	@ManyToOne
+	@JoinColumn(name="Acc_No")
+	private Account account;
+}

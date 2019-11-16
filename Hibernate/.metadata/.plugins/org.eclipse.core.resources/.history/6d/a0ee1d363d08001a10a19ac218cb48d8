@@ -1,0 +1,5 @@
+package com.lti.repository;  //it is a dao
+
+public class CustomerRepository {
+
+}

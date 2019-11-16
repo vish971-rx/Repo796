@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="register.lti">
+<form method="post" action="register.lti" enctype="multipart/form-data">
 
 Enter name:<input type="text" name="name"></br>
 Enter email id:<input type="text" name="email"></br>
+Select Your pic:<input type="file" name="profilePic"></br>
 <button type="submit">Register</button>
 </form>
 </body>

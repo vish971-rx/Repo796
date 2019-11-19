@@ -1,0 +1,39 @@
+package com.lti.component;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.List;
+
+public class CarPartsInventoryImpl1 implements CarPartsInventory{
+
+	public void addNewPart(CarPart carpart) {
+		// TODO Auto-generated method stub
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+			System.out.println("connection established..");
+			Statement smt=con.prepareStatement("insert into carpart(partno,partname,carmodel,quantity,price) values(?,?,?,?,?)");
+			
+			smt.setInt(1,123);
+			smt.setString(2,"Tyre");
+			smt.setString
+		
+			
+			con.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+
+	public List<CarPart> getAvailableParts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,81 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.lti.model.Customer;
+
+//Data access object- Design Pattern
+public class CustomerDao 
+{
+	
+	public void save(Customer customer)					//add//insert
+	{
+		//Step 1.  Load/create EntityMAnagerFactory object
+		//During this step, Meta-inf/persistence.xml
+		//file will be read automatically
+		
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracleTest");
+		
+	// Step 2: Lo9ad/Create EntityManager Obj
+		EntityManager em = emf.createEntityManager();
+		
+	//Step3:Participate/Start a Transaction
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+	
+		// Now we can insert/update/delete whatever we want 
+		//persist method generates insert query for us 
+		em.persist(customer);
+		tx.commit();
+		em.close();
+		emf.close();
+		
+		
+	}
+	
+	public Customer retrieve(int custId)     // to fetch the data from the database
+	{
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracleTest");
+		EntityManager em = emf.createEntityManager();
+		
+		//find method is used to generate select query
+		Customer cus=em.find(Customer.class, custId);
+		em.close();
+		emf.close();
+		return cus;
+	}
+	public List<Customer> fetchByCity(String city)				
+	{
+		//Step 1.  Load/create EntityMAnagerFactory object
+		//During this step, Meta-inf/persistence.xml
+		//file will be read automatically
+		
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("oracleTest");
+		
+	// Step 2: Lo9ad/Create EntityManager Obj
+		EntityManager em = emf.createEntityManager();
+		Query q=em.createQuery("select c from TBL_CUST as c where c.city=:ct");
+	//Step3:Participate/Start a Transaction
+	//	EntityTransaction tx = em.getTransaction();
+//		tx.begin();
+	List<Customer> customers=q.getResultList();
+		// Now we can insert/update/delete whatever we want 
+		//persist method generates insert query for us 
+		//em.persist(customer);
+		//tx.commit();
+		em.close();
+		emf.close();
+		return null;
+	
+		
+	}
+	
+	
+
+}

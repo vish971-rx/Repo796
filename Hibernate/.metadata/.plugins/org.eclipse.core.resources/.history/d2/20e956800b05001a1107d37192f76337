@@ -1,0 +1,13 @@
+package com.lti.testpackage;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//loading Spring's IoC container
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("spring-config.xml")
+	}
+
+}

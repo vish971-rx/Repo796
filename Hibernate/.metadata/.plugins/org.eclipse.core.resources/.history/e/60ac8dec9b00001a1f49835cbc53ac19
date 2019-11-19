@@ -1,0 +1,51 @@
+<html>
+<body>
+
+<!--  
+<form method="post"  action="CustomerServlet">
+  
+Name: <input type="text" name="name">
+City: <input type="text" name="cname">
+
+<input type="submit" value="submit">
+</form>
+
+<form method="post" action="CustomerServlet">
+Entyer CUSid: <input type="text" name="uid" >
+<input type="submit" value="submit">
+</form>
+
+-->
+<script>
+function abc()
+{
+	var a = document.getElementById("two").values;
+	if(a=="fetch")
+	{
+		document.getElementById("text1").hidden=true;
+		document.getElementById("text2").hidden=true;	
+	}
+}
+
+function abc1()
+{
+	var a = document.getElementById("one").values;
+	if(a=="insert")
+	{
+		document.getElementById("text3").hidden=true;
+	}
+}
+</script>
+<form method="post"  action="CustomerServlet">
+id: <input type="text" name="uid" id="text3">
+Name: <input type="text" name="name" id="text1" >
+City: <input type="text" name="cname" id="text2">
+insert   <input type="radio" name="c1" value="insert" id="one" onclick="abc1()">
+fetch    <input type="radio" name="c1" value="fetch" id="two" onclick="abc()">
+
+
+<input type="submit" value="submit" >
+</form>
+
+</body>
+</html>

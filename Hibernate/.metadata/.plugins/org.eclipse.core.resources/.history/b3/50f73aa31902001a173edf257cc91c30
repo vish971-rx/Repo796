@@ -1,0 +1,54 @@
+package com.lti.test;
+
+
+import org.junit.Test;
+
+import com.lti.dao.DaoForUserAddress;
+import com.lti.model.Address;
+import com.lti.model.User;
+
+public class UserAddressTest {
+
+/*	@Test
+	public void testUserSaveOrNot()
+	{
+		User user=new User();
+		user.setName("Uttu");
+		user.setEmail("Uttu12@qwettd.com");
+		user.setPassword("heysup12");
+		DaoForUserAddress dao= new DaoForUserAddress();
+		dao.save(user);
+	}
+	@Test
+	public void testAddressSaveOrNot()
+	{
+		DaoForUserAddress dao=new DaoForUserAddress();
+
+		User user=dao.fetchUser(161);
+		Address address=new Address();
+		address.setCity("Mumbai");
+		address.setPincode(100500);
+		address.setLandmark("Near koper station");
+		address.setUser(user);
+		dao.save(address);
+	}*/
+	
+	@Test
+	public void testUserAddressadded()
+	{
+		User user=new User();
+		user.setName("Jon Snow");
+		user.setEmail("winterfell12@qwettd.com");
+		user.setPassword("you know nothing");
+		DaoForUserAddress dao= new DaoForUserAddress();
+		//dao.save(user);
+		dao.fetchUser(user.getId());
+		Address address=new Address();
+		address.setCity("Winterfell");
+		address.setPincode(100500);
+		address.setLandmark("Westeros");
+		address.setUser(user);
+		dao.save(address);
+	}
+	
+}

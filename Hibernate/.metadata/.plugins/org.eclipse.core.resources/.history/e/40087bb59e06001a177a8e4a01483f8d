@@ -1,0 +1,37 @@
+package com.lti.test;
+
+import java.util.List;
+
+//import java.awt.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.component.CarPart;
+import com.lti.component.CarPartsInventory;
+
+
+
+public class TestSpringDb {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext ctx=
+				new ClassPathXmlApplicationContext("spring-db-config.xml");
+CarPartsInventory ob=(CarPartsInventory)ctx.getBean("carparts3");
+CarPart c= new CarPart(); //Model/Entity instances are not created using Spring //(CarPart)ctx.getBean("cp");
+c.setQuantity(1);
+c.setPrice(8000);
+c.setPartNo(1111);
+c.setPartName("dashboard");
+c.setCarModel("eco sport");
+		ob.addNewPart(c);
+//		List<CarPart> cs=ob.getAvailableParts();
+//		for(CarPart carpart:cs){
+//		System.out.println(carpart.getCarModel());
+//		}
+		System.out.println(ob.getAvailableParts());
+}
+
+}

@@ -1,0 +1,45 @@
+package com.lti.component;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+/**
+ 
+ * 	hibernate+spring
+ * @author varsha
+ *
+ */
+@Component("carparts4")
+public class CarPartsInventoryImpl4 implements CarPartsInventory{
+
+//@Autowired does not work for injecting EntityManager object
+	@PersistenceContext
+	private EntityManager entitymanager;
+	
+	public void addNewPart(CarPart carpart) {
+		entitymanager.persist(carpart);
+			
+		
+			}
+
+	public List<CarPart> getAvailableParts() {
+		return null;
+	}}
+		
+
+

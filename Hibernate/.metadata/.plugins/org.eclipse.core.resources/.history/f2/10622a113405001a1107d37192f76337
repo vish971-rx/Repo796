@@ -1,0 +1,19 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Database {
+static String url="localhost:8080/";
+static String database_name="demo";
+static String username="root";
+static String password="";
+public static Connection getConnection()
+{
+	Connection con=null;
+    try {
+    	Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con1=DriverManager.getConnection("jdbc:mysql://"+url+database_name,username,password);
+    }catch (Exception e2) {
+        System.out.println(e2);
+}
+    return con;
+}}

@@ -1,0 +1,21 @@
+package com.lti.test;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Account;
+
+public class AccountTransactionTest {
+
+	@Test
+	public void addAccount()
+	{
+		Account account=new Account();
+		account.setAccno(400001168);
+		account.setBalance(2300.00);
+		account.setName("Varsha");
+		account.setType("Savings");
+		openAccount(account);
+	}
+}
+

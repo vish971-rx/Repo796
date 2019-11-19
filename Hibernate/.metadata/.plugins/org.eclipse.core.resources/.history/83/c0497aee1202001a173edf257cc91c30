@@ -1,0 +1,16 @@
+package com.lti.model;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public class Album {
+
+	private int id;
+	private String name;
+	private LocalDate releaseDate;
+	private String genre;
+
+	
+	private List<Song> song;
+
+}

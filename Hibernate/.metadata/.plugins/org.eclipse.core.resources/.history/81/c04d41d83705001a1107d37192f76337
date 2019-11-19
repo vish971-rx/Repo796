@@ -1,0 +1,13 @@
+package com.lti.component;
+
+public class Car {
+	
+	private AudioSystem audiosystem;
+	
+	public void playMusic()
+	{
+		
+		audiosystem.playFM(98.3);
+	}
+
+}

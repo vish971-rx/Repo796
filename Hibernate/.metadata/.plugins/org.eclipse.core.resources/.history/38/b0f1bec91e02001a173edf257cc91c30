@@ -1,0 +1,58 @@
+package com.lti.test;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Album;
+import com.lti.model.Song;
+
+public class SongAlbumTest {
+	
+	@Test
+	public void addAlbum()
+	{
+		GenericDao dao=new GenericDao();
+		Album album=new Album();
+		album.setGenre("Pop");
+		album.setName("Meteora");
+		album.setReleaseDate(LocalDate.of(2012, 10, 30));
+		dao.save(album);
+	}
+	@Test
+	public void addSong()
+	{
+		GenericDao dao=new GenericDao();
+		Song song=new Song();
+		Album album=(Album)dao.fetchUser(Album.class, 241);
+		song.setArtist("Linkin Park");
+		song.setDuration(3.14);
+		song.setTitle("Numb");
+		song.setAlbum(album);
+		dao.save(song);
+	}
+	
+	@Test
+	public void addAlbumAlongWithSong()
+	{
+		GenericDao dao=new GenericDao();
+		Album album=new Album();
+		album.setGenre("Pop");
+		album.setName("Memories");
+		album.setReleaseDate(LocalDate.of(2012, 10, 30));
+		Song song=new Song();
+		Song song1=new Song();
+		song1.setArtist("Maroon5");
+		song1.setDuration(3.14);
+		song1.setTitle("Sugar");
+		song.setAlbum(album);
+		List<Song> s=new Arraylist<Song>();
+		
+		s.add(song);
+
+		dao.save(album);
+	}
+
+}

@@ -1,0 +1,56 @@
+package com.lti.component;
+
+import java.util.List;
+
+public class CarPart implements CarPartsInventory{
+	
+	private int partNo;
+	private String partName;
+	private String carModel;
+	private int quantity;
+	private double price;
+	public int getPartNo() {
+		return partNo;
+	}
+	@Override
+	public String toString() {
+		return "CarPart [partNo=" + partNo + ", partName=" + partName + ", carModel=" + carModel + ", quantity="
+				+ quantity + ", price=" + price + "]";
+	}
+	public void setPartNo(int partNo) {
+		this.partNo = partNo;
+	}
+	public String getPartName() {
+		return partName;
+	}
+	public void setPartName(String partName) {
+		this.partName = partName;
+	}
+	public String getCarModel() {
+		return carModel;
+	}
+	public void setCarModel(String carModel) {
+		this.carModel = carModel;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public void addNewPart(CarPart carpart) {
+		// TODO Auto-generated method stub
+		
+	}
+	public List<CarPart> getAvailableParts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

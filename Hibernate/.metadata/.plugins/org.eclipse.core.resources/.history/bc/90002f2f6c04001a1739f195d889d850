@@ -1,0 +1,26 @@
+package com.lti.model;
+
+import java.time.LocalTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_Stop")
+public class Stop {
+	@Id
+	@GeneratedValue
+	private int stopno;
+	private String name;
+	private LocalTime arrivalTime;
+	private LocalTime departureTime;
+	
+	@JoinColumn(name="bus_id")
+	@ManyToOne
+	private Bus bus;
+
+}

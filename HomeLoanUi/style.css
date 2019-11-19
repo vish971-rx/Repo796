@@ -1,0 +1,101 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+.wrapper
+{
+    width:1170px;
+    margin:auto;
+    
+   
+}
+header{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("home2.jpg");
+    height:100vh;
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center center;
+    position: relative;
+    opacity: 50;
+}
+
+.nav-area
+{
+    color : white;
+    float: right;
+    position: absolute;
+    top:40px;
+    right:20px;
+
+ 
+
+}
+    
+.nav-area span{
+    
+    display:inline block;
+
+}
+.nav-area span a
+{
+    color:#fff;
+    text-decoration: none;
+    padding:5px 20px;
+    
+    font-family:poppins;
+    font-size:14px;
+    background-color:rgba(7, 217, 245, 0.295);
+    
+
+}
+.nav-area span a:hover
+{
+    background:black;
+    color:#333;
+    font-size: 24px;
+}
+.logo img{
+    widows: 50px;
+    float: left;
+    height: auto;
+    position: absolute;
+    top:0px;
+    left:0px;
+
+}
+.welcome-text
+{
+position: absolute;
+width: 600px;
+height: 300px;
+margin: 20% 30%;
+text-align: center;
+
+}
+.welcome-text h1{
+    text-align: center;
+    color:black;
+    text-transform: uppercase;
+    font-size:60px;
+}
+.welcome-text a{
+    
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline block;
+    color: rgb(0, 0, 0);
+    background-color:rgba(7, 217, 245, 0.295);
+   
+    
+}
+
+
+.welcome-text a:hover{
+    background: black;
+    font-size:20px;
+    color:orange;
+}

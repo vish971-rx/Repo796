@@ -1,0 +1,28 @@
+package com.lti.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_ADDRESS")
+public class Address {
+
+	@Id
+	@GeneratedValue
+	private int id;
+	@Column(columnDefinition="number(6)")
+	private int pincode;
+	
+	@Column(columnDefinition="varchar2(20)")
+	private String city;
+	
+	@Column(columnDefinition="varchar2(20)")
+	private String landmark;
+	private User user;
+	
+
+	
+}

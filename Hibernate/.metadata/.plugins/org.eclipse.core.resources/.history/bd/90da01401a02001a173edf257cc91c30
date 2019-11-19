@@ -1,0 +1,18 @@
+package com.lti.test;
+
+import org.junit.Test;
+
+public class SongAlbumTest {
+	
+	@Test
+	public void addAlbum()
+	{
+		
+		
+	}
+	public void addSong()
+	{
+		
+	}
+
+}

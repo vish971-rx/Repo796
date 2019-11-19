@@ -1,0 +1,11 @@
+package com.lti.component;
+
+import org.springframework.stereotype.Component;
+
+@Component("sbi")
+public class SbiBank {
+public void grantRequest(double amount)
+{
+	System.out.println("request granted for transaction");
+}
+}

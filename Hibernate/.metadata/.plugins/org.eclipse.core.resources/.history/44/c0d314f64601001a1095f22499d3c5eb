@@ -1,0 +1,29 @@
+package com.lti.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_USER1")
+public class User  {
+
+	@Id
+	@GeneratedValue
+	@Column(columnDefinition="number(4)")
+	private int id;
+	
+	@Column(columnDefinition="varchar2(30)")
+	private String name;
+	
+	
+	@Column(unique=true,columnDefinition="varchar2(100)")
+	private String email;
+	
+	@Column(columnDefinition="varchar2(30)")
+	private String password;
+//	private Address address;
+
+}

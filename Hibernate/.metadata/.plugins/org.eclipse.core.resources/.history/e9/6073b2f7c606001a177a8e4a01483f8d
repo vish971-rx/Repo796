@@ -1,0 +1,8 @@
+package com.lti.dao;
+
+import org.springframework.stereotype.Component;
+
+@Component("income")
+public class IncomeupdateDao {
+
+}

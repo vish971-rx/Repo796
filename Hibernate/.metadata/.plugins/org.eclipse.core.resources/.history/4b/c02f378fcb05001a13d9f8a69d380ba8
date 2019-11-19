@@ -1,0 +1,11 @@
+package com.lti.component;
+
+public class TextEditor {
+
+	private SpellCheck sc; 
+	public void load(String document)
+	{
+		System.out.println(" this is text editor loading"+document);
+		sc.checkSpellingMistakes("varsha");
+s	}
+}

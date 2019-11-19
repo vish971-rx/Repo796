@@ -1,0 +1,18 @@
+package com.lti.testpackage;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.component.HelloWorld;
+
+public class TestSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//loading Spring's IoC container
+		ApplicationContext ctx=
+				new ClassPathXmlApplicationContext("spring-config.xml");
+		//Access the required object
+		HelloWorld h=(HelloWorld)ctx.getBean("hw");	}
+
+}

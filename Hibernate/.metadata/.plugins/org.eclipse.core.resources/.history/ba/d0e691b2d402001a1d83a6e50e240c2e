@@ -1,0 +1,64 @@
+package com.lti.service;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Account;
+import com.lti.model.Song;
+import com.lti.model.Transaction;
+
+public class AccountTransactionService {
+
+	
+	
+	public void openAccount(Account acc)
+	{
+		GenericDao dao=new GenericDao();
+		
+		dao.save(acc);
+	}
+	public void withdraw(int acno,double amount)
+	{
+		double amt=0.0;
+GenericDao dao=new GenericDao();
+Account account=(Account)(dao.fetchUser(Account.class,acno));
+List<Transaction> transactions=new ArrayList<Transaction>();
+Transaction transaction=new Transaction();
+		double bal=checkBalance(acno);
+		System.out.println(bal);
+		if(bal==0.0||bal<=amount)
+			System.out.println("insufficient balance");
+		else
+			{
+			 amt=bal-amount;
+			System.out.println("The remaining balance:"+amt);
+			}
+		account.setBalance(amt);
+		transaction.setAccount(account);
+		transaction.setType("Withdraw");
+		transaction.setTime(LocalDateTime.now());
+		transaction.setAmount(amount);
+		 transactions.add(transaction);
+		dao.save(account);
+		 dao.save(transaction);
+		
+	}
+	public void deposit (int fromAcn,int toAcno,double amount)
+	{
+		
+	}
+	
+	public double checkBalance(int acno)
+	{
+		GenericDao dao=new GenericDao();
+		
+		Account account=(Account)(dao.fetchUser(Account.class,acno));
+		
+		System.out.println("kkkkkk");
+		double remainingBalance=account.getBalance();
+		System.out.println("Remaining balance is "+ remainingBalance);
+		return remainingBalance;
+	}
+}

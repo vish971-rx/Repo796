@@ -1,0 +1,22 @@
+package com.lti.app;
+
+import com.lti.dao.CustomerDao;
+import com.lti.model.Customer;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Customer cust=new Customer();
+		cust.setCustName("Zac");
+		cust.setCustCity("Mumbai");
+		
+		
+		CustomerDao dao= new CustomerDao();
+		dao.save(cust);
+
+	}
+
+}
+

@@ -1,0 +1,27 @@
+package com.lti.test;
+
+import java.time.LocalDate;
+
+import org.junit.Test;
+
+import com.lti.dao.GenericDao;
+import com.lti.model.Album;
+
+public class SongAlbumTest {
+	
+	@Test
+	public void addAlbum()
+	{
+		GenericDao dao=new GenericDao();
+		Album album=new Album();
+		album.setGenre("Metal");
+		album.setName("Meteora");
+		album.setReleaseDate(LocalDate.of(2012, 10, 30));
+		dao.save(album);
+	}
+	public void addSong()
+	{
+		
+	}
+
+}
